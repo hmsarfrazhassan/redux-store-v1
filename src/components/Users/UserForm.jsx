@@ -28,36 +28,38 @@ function UserForm() {
 
         <button
           type="submit"
-          className="h-10 w-full bg-amber-100 ring-2 cursor-pointer active:bg-amber-600 "
+          className="h-10 w-full bg-amber-100 ring-2 cursor-pointer active:bg-amber-600 active:text-white"
         >
           Add user
         </button>
       </form>
 
-      <table className="w-full mt-10">
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {users.users.map((u) => (
-            <tr key={u.id}>
-              <td>{u.id}</td>
-              <td>{u.name}</td>
-              <td
-                className="cursor-pointer"
-                onClick={() => dispatch(deleteUser(u.id))}
-              >
-                ❌
-              </td>
+      {users.users.length > 0 && (
+        <table className="w-full mt-10 text-left">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {users.users.map((u) => (
+              <tr key={u.id}>
+                <td>{u.id}</td>
+                <td>{u.name}</td>
+                <td
+                  className="cursor-pointer"
+                  onClick={() => dispatch(deleteUser(u.id))}
+                >
+                  ❌
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
