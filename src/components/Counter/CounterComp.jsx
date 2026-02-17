@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { increment, decrement, reset } from "../../actions/counterActions";
 
 const CounterComp = () => {
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   return (
     <div className="py-10 flex flex-col gap-6 items-center">

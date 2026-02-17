@@ -44,7 +44,7 @@ function UserForm() {
         </thead>
 
         <tbody>
-          {users.map((u) => (
+          {users.users.map((u) => (
             <tr key={u.id}>
               <td>{u.id}</td>
               <td>{u.name}</td>
